@@ -3,10 +3,10 @@ import { connect } from "react-redux"
 import { addFood } from "../actions"
 
 function FoodInput(props) {
-  const [name, setName] = useState("Name")
-  const [proteins, setProteins] = useState(0)
-  const [carbs, setCarbs] = useState(0)
-  const [fats, setFats] = useState(0)
+  const [name, setName] = useState("")
+  const [proteins, setProteins] = useState()
+  const [carbs, setCarbs] = useState()
+  const [fats, setFats] = useState()
 
   const handleInputChange = event => {
     const target = event.target

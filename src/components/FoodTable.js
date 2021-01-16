@@ -1,39 +1,37 @@
-import React from 'react'
+import React from "react"
+import FoodItem from "./FoodItem"
+
+import Food from "../model/food"
 
 import Table from "react-bootstrap/Table"
-import { connect } from 'react-redux';
+import { connect } from "react-redux"
 
-function FoodTable() {
+function FoodTable(props) {
   return (
     <>
-       <Table striped bordered hover>
-          <thead>
-            <tr>
-              <th>Food Item</th>
-              <th>Proteins</th>
-              <th>Carbs</th>
-              <th>Fats</th>
-              <th>Kcal</th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* Render food item here */}
-            <tr>
-              <td>Chicken Thigh</td>
-              <td>100</td>
-              <td>30</td>
-              <td>10</td>
-              <td>610</td>
-            </tr>
-          </tbody>
-        </Table>
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>Food Item</th>
+            <th>Proteins</th>
+            <th>Carbs</th>
+            <th>Fats</th>
+            <th>Kcal</th>
+          </tr>
+        </thead>
+        <tbody>
+          {/* Render food item here */}
+          {props.foodList.length != 0
+            ? props.foodList.map(foodObj => <FoodItem food={foodObj} />)
+            : []}
+        </tbody>
+      </Table>
     </>
   )
 }
 
-const mapStateToProps =(state)=>{
-
-  return {foodList:state.foodList};
+const mapStateToProps = state => {
+  return { foodList: state.foodList }
 }
 
-export default connect(mapStateToProps)(FoodTable);
+export default connect(mapStateToProps)(FoodTable)
