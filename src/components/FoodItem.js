@@ -9,7 +9,8 @@ function FoodItem(props) {
       <tr>
         <td>
           <button onClick={() => props.deleteFood(props.food)}>Delete!</button>
-          {props.food.getName()}
+
+          {"  " + props.food.getName()}
         </td>
         <td>{props.food.getP()}</td>
         <td>{props.food.getC()}</td>
