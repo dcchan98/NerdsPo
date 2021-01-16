@@ -4,9 +4,9 @@ import { addFood } from "../actions"
 
 function FoodInput(props) {
   const [name, setName] = useState("")
-  const [proteins, setProteins] = useState()
-  const [carbs, setCarbs] = useState()
-  const [fats, setFats] = useState()
+  const [proteins, setProteins] = useState("")
+  const [carbs, setCarbs] = useState("")
+  const [fats, setFats] = useState("")
 
   const handleInputChange = event => {
     const target = event.target
@@ -20,6 +20,17 @@ function FoodInput(props) {
     } else if (event.target.id == "fats") {
       setFats(event.target.value)
     }
+  }
+
+  const handleSubmit = event =>{
+     // ToDo: Pick a better ID option
+     props.addFood(name, proteins, carbs, fats, props.foodList.length)
+
+     // reset
+     setName("")
+     setProteins("")
+     setCarbs("")
+     setFats("")
   }
 
   return (
@@ -68,11 +79,7 @@ function FoodInput(props) {
 
       <input
         type="submit"
-        onClick={() => {
-          // ToDo: Pick a better ID option
-          props.addFood(name, proteins, carbs, fats, props.foodList.length)
-          console.log(props.foodList)
-        }}
+        onClick={handleSubmit}
         value="Add Food"
       ></input>
     </div>

@@ -1,10 +1,16 @@
 import React from "react"
 
-export default function FoodItem(props) {
+import { connect } from "react-redux"
+import { deleteFood } from "../actions"
+
+function FoodItem(props) {
   return (
     <>
       <tr>
-        <td>{props.food.getName()}</td>
+        <td>
+          <button onClick={() => props.deleteFood(props.food)}>Delete!</button>
+          {props.food.getName()}
+        </td>
         <td>{props.food.getP()}</td>
         <td>{props.food.getC()}</td>
         <td>{props.food.getF()}</td>
@@ -13,3 +19,9 @@ export default function FoodItem(props) {
     </>
   )
 }
+
+const mapStateToProps = state => {
+  return { foodList: state.foodList }
+}
+
+export default connect(mapStateToProps, { deleteFood })(FoodItem)
