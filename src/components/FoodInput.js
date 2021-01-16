@@ -8,6 +8,12 @@ function FoodInput(props) {
   const [carbs, setCarbs] = useState(0)
   const [fats, setFats] = useState(0)
 
+  const handleInputChange = (event) => {
+    const target = event.target;
+
+    console.log(target.id)
+  }
+
   return (
     <div>
       <div class="row">
@@ -30,21 +36,25 @@ function FoodInput(props) {
           className="col-sm input-group-text"
           id="name"
           value={name}
+          onChange={handleInputChange}
         ></input>
         <input
           className="col-sm input-group-text"
           id="proteins"
           value={proteins}
+          onChange={handleInputChange}
         ></input>
         <input
           className="col-sm input-group-text"
           id="carbs"
           value={carbs}
+          onChange={handleInputChange}
         ></input>
         <input
           className="col-sm input-group-text"
           id="fats"
           value={fats}
+          onChange={handleInputChange}
         ></input>
       </div>
 
