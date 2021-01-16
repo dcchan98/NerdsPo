@@ -3,10 +3,10 @@ import { combineReducers } from 'redux';
 
 const FoodReducer = (FoodList = [], action) => {
   if (action.type === 'FOOD/ADD_FOOD') {
-    return action.payload;
+    return  [...FoodList,action.foodItem];
   }
 
-  return [...FoodList,action.foodItem];
+  return FoodList;
 };
 
 

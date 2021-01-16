@@ -11,17 +11,13 @@ function FoodInput(props) {
   const handleInputChange = event => {
     const target = event.target
     const id = event.target.id
-    console.log(target.id)
-    if(event.target.id=="name"){
+    if (event.target.id == "name") {
       setName(event.target.value)
-    }
-    else if(event.target.id=="proteins"){
+    } else if (event.target.id == "proteins") {
       setProteins(event.target.value)
-    }
-    else if(event.target.id=="carbs"){
+    } else if (event.target.id == "carbs") {
       setCarbs(event.target.value)
-    }
-    else if(event.target.id=="fats"){
+    } else if (event.target.id == "fats") {
       setFats(event.target.value)
     }
   }
@@ -72,7 +68,11 @@ function FoodInput(props) {
 
       <input
         type="submit"
-        onClick={() => props.addFood()}
+        onClick={() => {
+          // ToDo: Pick a better ID option
+          props.addFood(name, proteins, carbs, fats, props.foodList.length)
+          console.log(props.foodList)
+        }}
         value="Add Food"
       ></input>
     </div>

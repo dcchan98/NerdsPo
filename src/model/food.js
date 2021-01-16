@@ -2,9 +2,10 @@ export default class Food{
 
   constructor(name,p,c,f,id){
     this.name = name;
-    this.p = p;
-    this.f =f;
-    this.c = c;
+    this.p = Number(p);
+    this.f =Number(f);
+    this.c = Number(c);
+    this.id = id;
   }
 
   getTotalCalories(){
