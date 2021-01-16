@@ -1,8 +1,9 @@
 import React from 'react'
 
 import Table from "react-bootstrap/Table"
+import { connect } from 'react-redux';
 
-export default function FoodTable() {
+function FoodTable() {
   return (
     <>
        <Table striped bordered hover>
@@ -29,3 +30,10 @@ export default function FoodTable() {
     </>
   )
 }
+
+const mapStateToProps =(state)=>{
+
+  return {foodList:state.foodList};
+}
+
+export default connect(mapStateToProps)(FoodTable);

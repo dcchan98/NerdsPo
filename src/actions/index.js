@@ -1,7 +1,7 @@
 // Action creator
 import Food from "../model/food"
 
-export const AddFood = (name, p, c, f, id) => {
+export const addFood = (name, p, c, f, id) => {
   // Return an action
   return {
     type: 'FOOD/ADD_FOOD',

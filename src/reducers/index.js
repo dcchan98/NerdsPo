@@ -16,6 +16,6 @@ const ProfileReducer = (Profile = {}, action) => {
 
 
 export default combineReducers({
-  songs: FoodReducer,
-  selectedSong: ProfileReducer
+  foodList: FoodReducer,
+  profileDetails: ProfileReducer
 });
