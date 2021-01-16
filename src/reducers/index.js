@@ -6,7 +6,6 @@ const FoodReducer = (FoodList = [], action) => {
     return  [...FoodList,action.foodItem];
   }
   if (action.type === 'FOOD/DELETE_FOOD') {
-    console.log("delete")
     return  [...FoodList].filter(food => food!=action.foodItem);
   }
 
@@ -14,7 +13,7 @@ const FoodReducer = (FoodList = [], action) => {
 };
 
 
-const ProfileReducer = (Profile = {}, action) => {
+const ProfileReducer = (Profile = {name:"Name"}, action) => {
   return {};
 };
 
