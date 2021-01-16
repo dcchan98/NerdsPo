@@ -8,10 +8,22 @@ function FoodInput(props) {
   const [carbs, setCarbs] = useState(0)
   const [fats, setFats] = useState(0)
 
-  const handleInputChange = (event) => {
-    const target = event.target;
-
+  const handleInputChange = event => {
+    const target = event.target
+    const id = event.target.id
     console.log(target.id)
+    if(event.target.id=="name"){
+      setName(event.target.value)
+    }
+    else if(event.target.id=="proteins"){
+      setProteins(event.target.value)
+    }
+    else if(event.target.id=="carbs"){
+      setCarbs(event.target.value)
+    }
+    else if(event.target.id=="fats"){
+      setFats(event.target.value)
+    }
   }
 
   return (
