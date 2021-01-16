@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <Wrapper>
      
-        <h1>Home</h1>
+        <h1>NerdsPo</h1>
       </Wrapper>
     </>
   )
