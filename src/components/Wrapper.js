@@ -21,6 +21,11 @@ export default function Wrapper(props) {
         <Nav.Item>
           <Nav.Link href="/WorkOutLogger">Workout Logger</Nav.Link>
         </Nav.Item>
+
+
+        <Nav.Item>
+          <Nav.Link href="/Learn">Learn</Nav.Link>
+        </Nav.Item>
       </Nav>
 
       {props.children}
